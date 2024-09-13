@@ -12,8 +12,7 @@
 		}
 	}
 	</init>
-	<!--物流焊接台-->
-    <tileentity id="logisticspipes.blocks.LogisticsSolderingTileEntity">
+    <tileentity id="logisticspipes.blocks.LogisticsSolderingTileEntity"> <!--物流焊接台-->
         <line displayname="item.ingotIron.name">
 			var Iron = getSlot(nbt['items'], 9, 'index');
             return Iron['Count']
@@ -23,40 +22,33 @@
 			return name(NanoHopper)
         </line>
     </tileentity>
-	<!--物流能量中枢-->
-    <tileentity id="logisticspipes.blocks.powertile.LogisticsPowerJuntionTileEntity">
+    <tileentity id="logisticspipes.blocks.powertile.LogisticsPowerJuntionTileEntity"> <!--物流能量中枢-->
         <line displayname="gui.powerjunction.StoredEnergy">
             return nbt['powerLevel']+' / 2000000 LP'
         </line>
     </tileentity>
-	<!--物流安全站-->
-    <tileentity id="logisticspipes.blocks.LogisticsSecurityTileEntity">
+    <tileentity id="logisticspipes.blocks.LogisticsSecurityTileEntity"><!--物流安全站-->
 		<line displayname="gui.securitystation.pipeRemove">
 			if(nbt['allowAutoDestroy'] == 0){return translate("hud.msg.logisticspipes.off")}
 				else{return translate("hud.msg.logisticspipes.on")}
         </line>
-    </tileentity>
-	<!--物流TE能量供应器-->
-    <tileentity id="logisticspipes.blocks.powertile.LogisticsRFPowerProviderTileEntity">
+    </tileentity>	
+    <tileentity id="logisticspipes.blocks.powertile.LogisticsRFPowerProviderTileEntity"><!--物流TE能量供应器-->
         <line displayname="gui.powerprovider.StoredEnergy">
             return nbt['internalStorage']+' / 10000000 RF'
         </line>
     </tileentity>
-	<!--物流IC能量供应器-->
-    <tileentity id="logisticspipes.blocks.powertile.LogisticsIC2PowerProviderTileEntity">
+    <tileentity id="logisticspipes.blocks.powertile.LogisticsIC2PowerProviderTileEntity"><!--物流IC能量供应器-->
         <line displayname="gui.powerprovider.StoredEnergy">
             return nbt['internalStorage']+' / 40000000 EU'
         </line>
     </tileentity>
-	<!--物流基础管道-->
-    <tileentity id="logisticspipes.pipes.basic.LogisticsTileGenericPipe">
-		<!--物流请求桌-->
-        <line displayname="item.itemDisk">
+    <tileentity id="logisticspipes.pipes.basic.LogisticsTileGenericPipe"><!--物流基础管道-->
+        <line displayname="item.itemDisk"><!--物流请求桌-->
 			var disk = getSlot(nbt['diskInvitems'], 1, 'Count');
             if(disk['Count'] == 1){return translate("gui.fluidsupplier.Yes")}
         </line>
-		<!--物流供应管道MK1/MK2-->
-		<line displayname="gui.providerpipe.Mode">
+		<line displayname="gui.providerpipe.Mode"><!--物流供应管道MK1/MK2-->
 			switch(nbt['extractionMode'])
 				{
 				case 0:
@@ -79,8 +71,7 @@
 					break;
 				}
         </line>
-		<!--物流补给管道-->
-		<line displayname="gui.providerpipe.Mode">
+		<line displayname="gui.providerpipe.Mode"><!--物流补给管道-->
 			switch(nbt['requestmode'])
 				{
 				case 2:
@@ -100,8 +91,7 @@
 					break;
 				}
 		</line>
-		<!--物品栏-->
-		<line displayname="gui.crafting.Inventory">
+		<line displayname="gui.crafting.Inventory"><!--物品栏-->
         var items=nbt['items']; 
         if (items.length==0){return };
         var ns=[];
@@ -110,21 +100,17 @@
             }
          return ns.join('\n'+translate("gui.crafting.Inventory")+TAB+ALIGNRIGHT+WHITE);
         </line>
-		<!--物流卫星管道-->
-		<line displayname="gui.satellite.SatelliteID">
+		<line displayname="gui.satellite.SatelliteID"><!--物流卫星管道-->
 			return nbt['satelliteid']
         </line>
-		<!--物流合成管道-->
-		<line displayname="gui.crafting.Output">
+		<line displayname="gui.crafting.Output"><!--物流合成管道-->
 			var output = getSlot(nbt['items'], 9, 'index');
 			return name(output)
         </line>
-		<!--物流合成管道-->
-		<line displayname="gui.crafting.Priority">
+		<line displayname="gui.crafting.Priority"><!--物流合成管道-->
 			return nbt['priority']
 		</line>
-		<!--物流管道模块-->
-		<line displayname="">
+		<line displayname=""><!--物流管道模块-->
 			var items=nbt['upgradeManager']['UpgradeInventory_items'];
 			var ns=[];
             for(var index in items){
@@ -132,8 +118,7 @@
             }
          return ns.join('\n');
 		</line>
-		<!--蜜蜂分析物流管道-->
-		<line displayname="Extract Mode">
+		<line displayname="Extract Mode"><!--蜜蜂分析物流管道-->
 			switch(nbt['extractMode']){
 				case 0:
 					return "off";
@@ -143,12 +128,10 @@
 					break;
 				}
 		</line>
-		<!--物流网络连接器-->
-		<line displayname="gui.invsyscon.Resistance">
+		<line displayname="gui.invsyscon.Resistance"><!--物流网络连接器-->
 			return nbt['resistance']
 		</line>
-		<!--物流防火墙管道_被过滤的物品-->
-		<line displayname="gui.firewall.Filtereditemsare">
+		<line displayname="gui.firewall.Filtereditemsare"><!--物流防火墙管道_被过滤的物品-->
 			switch(nbt['isBlocking']){
 				case 0:
 					return translate("gui.firewall.Allowed");
@@ -158,8 +141,7 @@
 					break;
 				}
 		</line>
-		<!--物流防火墙管道_供应-->
-		<line displayname="gui.firewall.Providing">
+		<line displayname="gui.firewall.Providing"><!--物流防火墙管道_供应-->
 			switch(nbt['blockProvider']){
 				case 0:
 					return translate("gui.firewall.Allowed");
@@ -169,8 +151,7 @@
 					break;
 				}
 		</line>
-		<!--物流防火墙管道_合成-->
-		<line displayname="gui.firewall.Crafting">
+		<line displayname="gui.firewall.Crafting"><!--物流防火墙管道_合成-->
 			switch(nbt['blockCrafer']){
 				case 0:
 					return translate("gui.firewall.Allowed");
@@ -180,8 +161,7 @@
 					break;
 				}
 		</line>
-		<!--物流防火墙管道_分拣-->
-		<line displayname="gui.firewall.Sorting">
+		<line displayname="gui.firewall.Sorting"><!--物流防火墙管道_分拣-->
 			switch(nbt['blockSorting']){
 				case 0:
 					return translate("gui.firewall.Allowed");
@@ -191,8 +171,7 @@
 					break;
 				}
 		</line>
-		<!--物流防火墙管道_能量-->
-		<line displayname="gui.firewall.Powerflow">
+		<line displayname="gui.firewall.Powerflow"><!--物流防火墙管道_能量-->
 			switch(nbt['blockPower']){
 				case 0:
 					return translate("gui.firewall.Allowed");
@@ -202,8 +181,7 @@
 					break;
 				}
 		</line>
-		<!--物流底座-->
-		<line displayname="">
+		<line displayname=""><!--物流底座-->
 			var chassiitems=nbt['chassiitems'];
 			var ns=[];
             for(var index in chassiitems){
@@ -211,12 +189,10 @@
             }
          return ns.join('\n');
 		</line>
-		<!--物流流体补给管道_Amount-->
-		<line displayname="Amount">
+		<line displayname="Amount"><!--物流流体补给管道_Amount-->
 			return nbt['amount']
 		</line>
-		<!--物流流体容器补给管道-->
-		<line displayname="gui.fluidsupplier.Partialrequests">
+		<line displayname="gui.fluidsupplier.Partialrequests"><!--物流流体容器补给管道-->
 			switch(nbt['requestpartials']){
 				case 0:
 					return translate("gui.fluidsupplier.No");
@@ -226,8 +202,7 @@
 					break;
 				}
 		</line>
-		<!--物流流体补给管道-->
-		<line displayname="Min. Mode">
+		<line displayname="Min. Mode"><!--物流流体补给管道-->
 			switch(nbt['_bucketMinimum']){
 				case 0:
 					return "None";
@@ -243,8 +218,7 @@
 					break;
 				}
 		</line>
-		<!--防火墙-->
-		<line displayname="">
+		<line displayname=""><!--防火墙-->
 			var authorize=nbt['upgradeManager']['SecurityInventory_items'][0]['index'];
 			if(authorize == 0){return translate("gui.firewall.Firewall")+"√"}
 		</line>

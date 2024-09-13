@@ -1,6 +1,7 @@
 <!--Author: ViKaleidoscope, EpixZhang-->
-<!--Date: 2015/2/8-->
-<!--Version: 3.0.6.232-->
+<!--Editor: KuroPeach-->
+<!--Date: 2021/5/5-->
+<!--Version: 3.0.25-GTNH-->
 <oo>
     <tileentity id="Air Collector">
         <line displayname="hud.msg.energ">
@@ -135,36 +136,12 @@
             return nbt['liquidTank']['Amount']
         </line>
     </tileentity>
-    <tileentity id="GalacticraftCore.Spaceship">
-        <line displayname="hud.msg.GalacticraftCore.TimeUntilLaunch">
-            return nbt['timeUntilLaunch']
-        </line>
-        <line displayname="tile.fuel.name">
-            return nbt['fuelTank']['Amount']
-        </line>
-    </tileentity>
-    <tileentity id="SpaceshipT2">
-        <line displayname="hud.msg.GalacticraftCore.TimeUntilLaunch">
-            return nbt['timeUntilLaunch']
-        </line>
-        <line displayname="tile.fuel.name">
-            return nbt['fuelTank']['Amount']
-        </line>
-    </tileentity>
-    <tileentity id="Tier3RocketGC">
-        <line displayname="hud.msg.GalacticraftCore.TimeUntilLaunch">
-            return nbt['timeUntilLaunch']
-        </line>
-        <line displayname="tile.fuel.name">
-            return nbt['fuelTank']['Amount']
-        </line>
-    </tileentity>
-    <tileentity id="GalacticraftCore.Buggy">
+    <entity id="GalacticraftCore.Buggy">
         <line displayname="tile.fuel.name">
             return nbt['fuel']
         </line>
         <line displayname="tile.fuel.name">
             return nbt['fuelTank']['Amount']
         </line>
-    </tileentity>
+    </entity>
 </oo>

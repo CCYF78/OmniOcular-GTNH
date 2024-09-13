@@ -1,0 +1,13 @@
+<oo>
+    <tileentity id="BaseMetaTileEntity">
+        <line displayname="已绑定至">
+            if (nbt['mID'] == 2716) {
+                if ( nbt['master'] != undefined) {
+                    return GREEN + "X: " + nbt['master']['x'] + ", Y: " + nbt['master']['y'] + ", Z: " + nbt['master']['z']
+                } else {
+                    return RED + "未绑定"
+                }
+            }
+        </line>
+    </tileentity>
+</oo>

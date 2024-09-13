@@ -1,0 +1,32 @@
+<!--Author: ViKaleidoscope -->
+<!--Date: 2015/04/22-->
+<!--Version: rv2-beta-28-->
+<oo>
+<tileentity id="BaseMetaTileEntity">
+<line displayname="数据存储-物品">
+	if(nbt['mID']==2710&&nbt['cachedItems']!=undefined)
+{
+	outputString = "\\n";
+	for (i=0;  nbt['cachedItems'][i] != undefined; i++)
+	 {			
+		outputString += YELLOW +nbt['cachedItems'][i]['size']+"个"+GREEN+name(nbt['cachedItems'][i]['itemStack'])+ALIGNRIGHT+"\\n" ;
+	}	
+	 return  outputString;
+
+	
+}
+</line>
+  
+		<line displayname="数据存储-流体"> 
+			if(nbt['mID']==2713&&nbt['cachedFluids']!=undefined)
+			{	outputString = "\\n"; 
+			    for(i=0; nbt['cachedFluids'][i]!=undefined; i++) 
+			{	
+				outputString += WHITE+nbt['cachedFluids'][i]['size']+YELLOW+"mB "+GREEN+  fluidName(nbt['cachedFluids'][i]['fluidStack']['FluidName'])+ALIGNRIGHT+ "\\n" ; 
+					
+			}; 
+				return outputString; 
+			};	
+	</line>
+</tileentity>
+</oo>

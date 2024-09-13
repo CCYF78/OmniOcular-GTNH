@@ -1,0 +1,42 @@
+<!--Author: PinkYuDeer -->
+<!--Date: 2024/11/25-->
+
+<oo>
+    <tileentity id="BlockCableBus">
+        <line displayname="§b优先级 下">
+            if(nbt['extra:0']['priority']!=undefined)
+            return GOLD+nbt['extra:0']['priority']
+        </line>
+        <line displayname="§b优先级 上">
+            if(nbt['extra:1']['priority']!=undefined)
+            return GOLD+nbt['extra:1']['priority']
+        </line>
+        <line displayname="§b优先级 东">
+            if(nbt['extra:5']['priority']!=undefined)
+            return GOLD+nbt['extra:5']['priority']
+        </line>
+        <line displayname="§b优先级 西">
+            if(nbt['extra:4']['priority']!=undefined)
+            return GOLD+nbt['extra:4']['priority']
+        </line>
+        <line displayname="§b优先级 南">
+            if(nbt['extra:3']['priority']!=undefined)
+            return GOLD+nbt['extra:3']['priority']
+        </line>
+        <line displayname="§b优先级 北">
+            if(nbt['extra:2']['priority']!=undefined)
+            return GOLD+nbt['extra:2']['priority']
+        </line>
+    </tileentity>
+    <tileentity id="BlockInterface">
+        <line displayname="§b优先级">
+            return GOLD+nbt['priority']
+        </line>
+    </tileentity>
+    <tileentity id="fluid_interface">
+        <line displayname="§b优先级">
+            return GOLD+nbt['priority']
+        </line>
+    </tileentity>
+</oo>
+    
